@@ -111,6 +111,7 @@ public class PylonGolf {
 				});
 			} else if(c == 'r') {
 				stack.add(new Random().nextInt((Integer) stack.remove(stack.size() - 1)));
+				selectedIndex = stack.size() - 1;
 			} else if(c == '=') {
 				Object item = stack.get(selectedIndex);
 				if(item instanceof Double) {
