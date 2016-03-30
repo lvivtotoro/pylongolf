@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -100,6 +102,13 @@ public class PylonGolf {
 				System.out.println();
 			} else if (c >= 'A' && c <= 'Z') {
 				stack.add(vars.get(c + ""));
+			} else if(c == '}') {
+				stack.add(new Date() {
+					private static final long serialVersionUID = 1L;
+					public String toString() {
+						return getHours() + ":" + getMinutes() + ":" + getSeconds();
+					}
+				});
 			}
 		}
 		scanner.close();
