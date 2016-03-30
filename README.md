@@ -20,6 +20,7 @@ Text between 2 " symbols is also added to the stack.
 `:` - Assign selected stack item to a variable. (this removes the item from the stack)  
 `)` - Print selected stack item  
 `~` - Print stack items without spaces  
+`}` - Pushes the current time into the stack  
 
 ## Running a program
 To run a program enter this command:  
