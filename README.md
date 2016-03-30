@@ -20,6 +20,9 @@ Text between 2 " symbols is also added to the stack.
 `:` - Assign selected stack item to a variable. (this removes the item from the stack)  
 `)` - Print selected stack item  
 `~` - Print stack items without spaces  
+`}` - Pushes the current time into the stack (V3)  
+`r` - Choose a number between 0 and the selected stack item (V4)
+`w` - Wait an amount of milliseconds (the selected stack item tells how long) (V4)
 
 ## Running a program
 To run a program enter this command:  
