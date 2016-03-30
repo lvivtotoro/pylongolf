@@ -5,10 +5,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 @SuppressWarnings("unused")
@@ -109,6 +109,30 @@ public class PylonGolf {
 						return getHours() + ":" + getMinutes() + ":" + getSeconds();
 					}
 				});
+			} else if(c == 'r') {
+				stack.add(new Random().nextInt((Integer) stack.remove(stack.size() - 1)));
+			} else if(c == '=') {
+				Object item = stack.get(selectedIndex);
+				if(item instanceof Double) {
+					Double dbl = (Double) item;
+					String number = "";
+					for (int l0 = l; l0 < content.length(); l0++) {
+						if (isNumber(content.charAt(l0))) {
+							number += content.charAt(l0);
+						} else {
+							l = l0;
+							if(dbl.compareTo(Double.valueOf(number)) == 0) {
+								// TODO: Fix this
+							}
+							break;
+						}
+					}
+				}
+			} else if(c == 'w') {
+				Object item = stack.get(selectedIndex);
+				if(item instanceof Double) {
+					Thread.sleep(((Double) item).longValue());
+				}
 			}
 		}
 		scanner.close();
