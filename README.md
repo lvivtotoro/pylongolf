@@ -23,6 +23,7 @@ Text between 2 " symbols is also added to the stack.
 `}` - Pushes the current time into the stack (V3)  
 `r` - Choose a number between 0 and the selected stack item (V4)
 `w` - Wait an amount of milliseconds (the selected stack item tells how long) (V4)
+`p` - Open a web-page. (V5)
 
 ## Running a program
 To run a program enter this command:  
