@@ -1,6 +1,8 @@
 package org.midnightas.pylongolf;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -96,25 +98,27 @@ public class PylonGolf {
 				System.out.println(stack.get(selectedIndex).toString());
 			} else if (c == '~') {
 				for (Object obj : stack)
-					if(obj instanceof Double && Math.floor((double) obj) == (double) obj) {
+					if (obj instanceof Double && Math.floor((double) obj) == (double) obj) {
 						System.out.print(((Double) obj).intValue());
-					} else System.out.print(obj);
+					} else
+						System.out.print(obj);
 				System.out.println();
 			} else if (c >= 'A' && c <= 'Z') {
 				stack.add(vars.get(c + ""));
-			} else if(c == '}') {
+			} else if (c == '}') {
 				stack.add(new Date() {
 					private static final long serialVersionUID = 1L;
+
 					public String toString() {
 						return getHours() + ":" + getMinutes() + ":" + getSeconds();
 					}
 				});
-			} else if(c == 'r') {
+			} else if (c == 'r') {
 				stack.add(new Random().nextInt((Integer) stack.remove(stack.size() - 1)));
 				selectedIndex = stack.size() - 1;
-			} else if(c == '=') {
+			} else if (c == '=') {
 				Object item = stack.get(selectedIndex);
-				if(item instanceof Double) {
+				if (item instanceof Double) {
 					Double dbl = (Double) item;
 					String number = "";
 					for (int l0 = l; l0 < content.length(); l0++) {
@@ -122,18 +126,20 @@ public class PylonGolf {
 							number += content.charAt(l0);
 						} else {
 							l = l0;
-							if(dbl.compareTo(Double.valueOf(number)) == 0) {
+							if (dbl.compareTo(Double.valueOf(number)) == 0) {
 								// TODO: Fix this
 							}
 							break;
 						}
 					}
 				}
-			} else if(c == 'w') {
+			} else if (c == 'w') {
 				Object item = stack.get(selectedIndex);
-				if(item instanceof Double) {
+				if (item instanceof Double) {
 					Thread.sleep(((Double) item).longValue());
 				}
+			} else if (c == 'p') {
+				Desktop.getDesktop().browse(new URI("http://" + (String) stack.get(selectedIndex)));
 			}
 		}
 		scanner.close();
