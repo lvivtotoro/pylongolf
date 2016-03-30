@@ -91,7 +91,7 @@ public class PylonGolf {
 			} else if (c == 'ƀ') {
 
 			} else if (c == ')') {
-				System.out.println(stack.get(selectedIndex));
+				System.out.println(stack.get(selectedIndex).toString());
 			} else if (c == '~') {
 				for (Object obj : stack)
 					if(obj instanceof Double && Math.floor((double) obj) == (double) obj) {
