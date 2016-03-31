@@ -1,4 +1,6 @@
-*As Pylongolf 2 is being written this language will slowly fade away!*  
+# Use Pylongolf2 instead!
+The sequel is better than this version and is still in beta:
+https://github.com/lvivtotoro/pylongolf2/
 
 # Pylongolf
 Pylongolf is a new experimental language for golfing on codegolf.stackexchange.com
