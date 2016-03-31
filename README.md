@@ -1,3 +1,5 @@
+*As Pylongolf 2 is being written this language will slowly fade away!*  
+
 # Pylongolf
 Pylongolf is a new experimental language for golfing on codegolf.stackexchange.com
 
